@@ -50,7 +50,7 @@ class MyBot(Bot):
             self.sense.show_text(msg['text'])
 
     def message(self, func):
-        MessageLoop(self, func).run_forever()
+        MessageLoop(self, func).run_as_thread()
 
     def url_photo_send(self, url):
         self.sendPhoto(self.user_id, url)
@@ -58,3 +58,5 @@ class MyBot(Bot):
 
 if __name__ == '__main__':
     b = MyBot()
+    while True:
+        pass
