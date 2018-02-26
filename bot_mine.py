@@ -27,7 +27,7 @@ class MyBot(telepot.Bot):
             self.sense = Sense()
             self.message(self.handle_sense)
             MessageLoop(self, {'chat': self.handle,
-                               'callback_query': self.on_callback_query}).run_as_thread()
+                               'callback_query': self.on_callback_query}).run_forever()
         except Exception as e:
             print(e)
             print('Not in Raspberry or did not detect sense Hat')
